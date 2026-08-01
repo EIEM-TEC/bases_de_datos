@@ -1,0 +1,106 @@
+% !LW recipe=tectonic
+% !TEX encoding = UTF-8
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[letterpaper,margin=2.25cm,headheight=15pt]{geometry}
+\usepackage{microtype}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs,array,tabularx,longtable,makecell,adjustbox}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{lastpage}
+
+\definecolor{azulTEC}{HTML}{275DA8}
+\definecolor{azulClaro}{HTML}{EAF2FB}
+\definecolor{cafeTEC}{HTML}{9A6A00}
+\definecolor{cafeClaro}{HTML}{FFF8E5}
+\definecolor{azulTabla}{HTML}{D9EEF8}
+\definecolor{grisEncabezado}{HTML}{B9B9B9}
+\definecolor{grisTexto}{HTML}{30343B}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=azulTEC,
+  urlcolor=azulTEC,
+  pdftitle={Documento curricular base},
+  pdfauthor={Escuela de Ingeniería Electromecánica}
+}
+
+\titleformat{\section}{\LARGE\sffamily\color{azulTEC}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\Large\sffamily\color{azulTEC}}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\large\sffamily\color{azulTEC}}{\thesubsubsection}{0.7em}{}
+\titleformat{\paragraph}[block]{\normalsize\bfseries\color{grisTexto}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.4em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.45em}
+\titlespacing*{\subsubsection}{0pt}{1em}{0.35em}
+\setlist[itemize]{leftmargin=1.5em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate,1]{leftmargin=1.8em,label=\arabic*.}
+\setlist[enumerate,2]{leftmargin=2.2em,label=\theenumi.\arabic*.}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.16}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small Documento curricular base}
+\fancyhead[R]{\sffamily\small Ingeniería Electromecánica}
+\fancyfoot[L]{\sffamily\footnotesize Contenido de referencia}
+\fancyfoot[R]{\sffamily\footnotesize Página \thepage\ de \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{cuadroazul}[1][]{
+  enhanced,breakable,colback=azulClaro,colframe=azulTEC,
+  boxrule=0.7pt,arc=1mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+  title={#1},fonttitle=\bfseries\sffamily
+}
+\newtcolorbox{cuadrocafe}[1][]{
+  enhanced,breakable,colback=cafeClaro,colframe=cafeTEC,
+  boxrule=0.7pt,arc=1mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+  title={#1},fonttitle=\bfseries\sffamily
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{2.2cm}
+  {\sffamily\bfseries\color{azulTEC}\fontsize{28}{33}\selectfont
+  Documento curricular base\par}
+  \vspace{0.8cm}
+  {\sffamily\Large Licenciatura en Ingeniería Electromecánica\par}
+  \vspace{0.3cm}
+  {\sffamily\large con salida lateral de bachillerato y énfasis\par}
+  \vspace{1.5cm}
+  \begin{tcolorbox}[colback=azulClaro,colframe=azulTEC,width=.82\textwidth,arc=2mm]
+    \centering
+    Version 0.1\\
+  \end{tcolorbox}
+  \vfill
+  {\sffamily Escuela de Ingeniería Electromecánica\\
+  Tecnológico de Costa Rica\par}
+\end{titlepage}
+
+\section*{Cuadros reutilizables}
+
+\begin{cuadroazul}[Cuadro azul]
+Espacio reservado para notas, definiciones o información destacada.
+\end{cuadroazul}
+
+\vspace{0.8cm}
+
+\begin{cuadrocafe}[Cuadro café]
+Espacio reservado para advertencias, controles o información que requiera atención.
+\end{cuadrocafe}
+
+\clearpage
+\input{contenido.tex}
+
+\end{document}
